@@ -42,7 +42,6 @@ function initializeDatabase() {
      );
   `
   ).run();
-  // TODO: Add your account and deal tables schemas here
   return db;
 }
 
