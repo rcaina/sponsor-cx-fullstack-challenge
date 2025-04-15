@@ -3,7 +3,6 @@ import Database from "better-sqlite3";
 function initializeDatabase() {
   const db = new Database("./database.sqlite", { verbose: console.log });
 
-// Enable foreign key support
   db.pragma("foreign_keys = ON");
 
   db.prepare(

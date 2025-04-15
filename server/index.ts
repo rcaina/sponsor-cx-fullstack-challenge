@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import initializeDatabase from "./db";
 import handleOrganizations from "./organizations";
 import handleAccounts from "./accounts";
 import handleDeals from "./deals";
+import initializeDatabase from "./db";
 const app = express();
 const port = process.env.PORT || 3002;
 
@@ -14,22 +14,22 @@ const port = process.env.PORT || 3002;
  * You can customize and organize it to your needs.
  * Good luck!
  */
-const db = initializeDatabase();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/organizations", (req, res) => {
+export const db = initializeDatabase()
+app.all("/organizations", (req, res) => {
   handleOrganizations(req, res)
 });
 
-app.get("/accounts", (req, res) => {
+app.all("/accounts", (req, res) => {
 
   handleAccounts(req, res);
 });
 
-app.get("/deals", (req, res) => {
+app.all("/deals", (req, res) => {
 
   handleDeals(req, res);
 });
