@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import initializeDatabase from "./db";
+import handleOrganizations from "./organizations";
+import handleAccounts from "./accounts";
+import handleDeals from "./deals";
 const app = express();
 const port = process.env.PORT || 3002;
 
@@ -17,23 +20,18 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  const rows = db.prepare("SELECT * FROM organizations").all();
-  res.json({ message: "Welcome to the server! 🎉", rows });
+app.get("/organizations", (req, res) => {
+  handleOrganizations(req, res)
 });
 
 app.get("/accounts", (req, res) => {
 
-  const {organizationId} = req.query;
-  const rows = db.prepare("SELECT * FROM account").all();
-  res.json({ message: "Welcome to the server! 🎉", rows });
+  handleAccounts(req, res);
 });
 
 app.get("/deals", (req, res) => {
 
-  const {accountId} = req.query;
-  const rows = db.prepare("SELECT * FROM deal").all();
-  res.json({ message: "Welcome to the server! 🎉", rows });
+  handleDeals(req, res);
 });
 
 app.listen(port, () => {

@@ -11,3 +11,5 @@ Steps
   - Connect to the database using table plus to view the data and make sure structure corresponds with how I want it.
   - I have not used sqlite in a while so have to remember how the tables are built and how to specify the relationships between tables. Here I used ChatGPT for some assistance on the formatting to make this happend. (Setting the Foreign keys)
   - Now that I have a table, I will work with the endpoints, and test them out to make sure I am getting
+  - I decided to add prisma as an ORM. I did not want to deal with the raw strings. Prisma is an ORM I have used a lot recently and I am comfortable using it. I had to install prisma for this and update the schema and run the prisma migration
+  - adding api folders for each table and for each method

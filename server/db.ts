@@ -18,7 +18,7 @@ function initializeDatabase() {
   ).run();
   db.prepare(
     `
-     CREATE TABLE IF NOT EXISTS account (
+     CREATE TABLE IF NOT EXISTS accounts (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        name TEXT NOT NULL,
        organizationId TEXT NOT NULL,
@@ -30,7 +30,7 @@ function initializeDatabase() {
   ).run();
   db.prepare(
     `
-     CREATE TABLE IF NOT EXISTS deal (
+     CREATE TABLE IF NOT EXISTS deals (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        value TEXT NOT NULL,
        status TEXT NOT NULL,
@@ -39,7 +39,7 @@ function initializeDatabase() {
        ended_at DATETIME DEFAULT CURRENT_TIMESTAMP,
        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-       FOREIGN KEY (accountId) REFERENCES account(id)
+       FOREIGN KEY (accountId) REFERENCES accounts(id)
      );
   `
   ).run();
