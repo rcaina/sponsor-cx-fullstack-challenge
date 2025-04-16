@@ -32,6 +32,12 @@ FrontEnd
 - I used try/catch in the backend and console.error/console.log to help with debuggin as I hit endpoints and make sure I retrieve data correctly. I also used the javascript debug terminal for step by step debugging.
 - there is definitely multiple ways to optimize this and clean up the file structure as well if I had more time and gone further into organization.
 
+Additional Improvement
+
+- Added a way to create objects (orgs/accounts/deals) from the frontend
+- Added validation (probably using something like zod) to validate data on the backend
+- Improved error handling by displaying clear error messages on the front end.
+
 LLM (ChatGPT)
 
 - I did use some help from ChatGPT, mainly as I got familiar with the css styling agai.
